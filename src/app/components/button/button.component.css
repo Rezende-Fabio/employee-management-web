@@ -1,5 +1,5 @@
 .button-primary {
-    background-color: blue;
+    background-color: var(--primary-color);
     color: #ffffff;
     font-weight: 500;
     font-size: 16px;

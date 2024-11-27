@@ -1,0 +1,47 @@
+.bg-image {
+    height: 100%;
+    width: 55%;
+    display: block;
+    float: left;
+    background-image: url('../../../assets/images/background-index.jpg');
+    background-color: var(--primary-color);
+    background-size: 100% 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.right-area {
+    height: 100%;
+    width: 45%;
+    float: right;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 7px;
+    color: var(--primary-color);
+    padding: 0;
+    margin-bottom: 6px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 4px;
+    font-size: 10px;
+    color: var(--primary-color);
+}
+
+@media only screen and (max-width: 767px) {
+    .right-area {
+        width: 100%;
+    }
+}
