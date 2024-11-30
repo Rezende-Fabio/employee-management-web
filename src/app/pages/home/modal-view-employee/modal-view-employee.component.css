@@ -1,0 +1,42 @@
+.title {
+    font-size: 26px;
+    font-weight: 500;
+    padding: 0;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.btn-close-modal {
+    border: 2px solid #575757;
+    border-radius: 8px;
+    padding: 5px 5px 0px 5px;
+    position: relative;
+    transition: 0.3s linear all;
+}
+
+.btn-close-modal:hover {
+    box-shadow: 0px 0px 5px 3px #0a0a0a40;
+    transform: translateY(-3px);
+}
+
+mat-icon{
+    transition: 0.3s linear all;
+}
+
+.btn-close-modal:hover mat-icon{
+    transform: translateY(-1.5px);
+}
+
+.information-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.information {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-color);
+    margin-bottom: 20px;
+}

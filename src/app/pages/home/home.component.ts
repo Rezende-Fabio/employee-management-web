@@ -10,11 +10,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ModalViewEmployeeComponent } from './modal-view-employee/modal-view-employee.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SidebarComponent, RouterModule, ButtonComponent, MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatIconModule],
+  imports: [SidebarComponent, RouterModule, ButtonComponent, MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatIconModule, MatDialogModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -27,7 +29,10 @@ export class HomeComponent implements OnInit {
 
   ListEmployees: Employee[] = [];
 
-  constructor(private apiService: EmployeeService) {
+  constructor(
+    private apiService: EmployeeService,
+    public dialog: MatDialog
+  ) {
     this.dataSource = new MatTableDataSource<Employee>(this.ListEmployees);
   }
 
@@ -65,5 +70,16 @@ export class HomeComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  //Logicas Modal
+  openModalViewEmployee(employee: Employee, enterAnimationDuration: string, exitAnimationDuration: string) {
+    this.dialog.open(ModalViewEmployeeComponent, {
+      height: "230px",
+      width: '900px',
+      data: employee,
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
   }
 } 

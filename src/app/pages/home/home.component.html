@@ -37,7 +37,7 @@
                 <ng-container matColumnDef="action">
                     <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
                     <td class="td-table" mat-cell *matCellDef="let employee">
-                        <button type="button" class="btn btn-sm btn-outline-primary btn-table">
+                        <button type="button" class="btn btn-sm btn-outline-primary btn-table" (click)="openModalViewEmployee(employee, '300ms', '300ms')">
                             <mat-icon>visibility</mat-icon>
                         </button>
                         <button type="button" class="btn btn-sm btn-outline-warning btn-table">

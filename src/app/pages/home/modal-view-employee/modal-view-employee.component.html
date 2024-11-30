@@ -1,0 +1,22 @@
+<div class="container-fluid p-4">
+    <div class="float-end btn-close-modal hover" (click)="closeModal()">
+        <mat-icon>close</mat-icon>
+    </div>
+    
+    <h1 class="title">Detalhes do Funcionários</h1>
+
+    <div class="row mt-3">
+        <div class="col-6">
+            <h4 class="information-title">Nome:</h4>
+            <p class="information">{{ employee.nomeCompleto }}</p>
+        </div>
+        <div class="col-6">
+            <h4 class="information-title">Departamento:</h4>
+            <p class="information">{{ employee.departamento }}</p>
+        </div>
+        <div class="col-6">
+            <h4 class="information-title">Turno:</h4>
+            <p class="information">{{ employee.turno }}</p>
+        </div>
+    </div>
+</div>
