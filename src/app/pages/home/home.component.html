@@ -16,6 +16,50 @@
                 <mat-label>Filter</mat-label>
                 <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
             </mat-form-field>
+
+            <table class="mat-elevation-z8" mat-table [dataSource]="dataSource" matSort>
+
+                <ng-container matColumnDef="name">
+                    <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+                    <td class="td-table" mat-cell *matCellDef="let employee"> {{employee.nomeCompleto}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="department">
+                    <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Departamento </th>
+                    <td class="td-table" mat-cell *matCellDef="let employee"> {{employee.departamento}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="shift">
+                    <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Turno </th>
+                    <td class="td-table" mat-cell *matCellDef="let employee"> {{employee.turno}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
+                    <td class="td-table" mat-cell *matCellDef="let employee">
+                        <button type="button" class="btn btn-sm btn-outline-primary btn-table">
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-warning btn-table">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-danger btn-table"> 
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let employee; columns: displayedColumns;"></tr>
+
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell no-data" colspan="4">Não foi encontrado dados para a pesquisa: "{{input.value}}"
+                    </td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[3, 5, 7]"
+                aria-label="Selecione os funcionários por página"></mat-paginator>
         </div>
     </div>
 </div>
