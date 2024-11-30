@@ -1,2 +1,21 @@
 <app-sidebar></app-sidebar>
-<p>home works!</p>
+
+<div class="container-fluid pt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="title">Cadastro de Funcionários</h1>
+            <h2 class="sub-title">Gerencie funcionários, edicionando, editando e excluindo</h2>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <app-button class="float-end" textButton="+ Cadastrar"></app-button>
+
+            <mat-form-field class="w-50">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
