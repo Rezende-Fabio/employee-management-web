@@ -1,1 +1,58 @@
-<p>create-update-employee works!</p>
+<div class="container">
+    <div class="area-title pt-4">
+        <h1 class="title mb-5">{{ titlePage }}</h1>
+    </div>
+
+    @if (showAlert) {
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            <div>
+              {{ messageAlert }}
+            </div>
+            <button type="button" (click)="closeAlert()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <form class="row" [formGroup]="formEmployee">
+        <div class="col-12 col-md-12 mb-4">
+            <mat-form-field class="w-100">
+                <mat-label>Nome Completo</mat-label>
+                <input type="text" matInput formControlName="nomeCompleto" placeholder="Digite o nome do funcionário">
+                @if (formEmployee.controls["nomeCompleto"].invalid) {
+                    <mat-error>Nome é <strong>obrigatório</strong></mat-error>
+                }
+            </mat-form-field>
+        </div>
+
+        <div class="col-6 col-md-6">
+            <mat-form-field class="w-100">
+                <mat-label>Departamento</mat-label>
+                <mat-select formControlName="departamento">
+                  @for (department of listDepartments; track department) {
+                    <mat-option [value]="department">{{department}}</mat-option>
+                  }
+                </mat-select>
+                @if (formEmployee.controls["departamento"].invalid) {
+                    <mat-error>Selecione um <strong>departamento</strong></mat-error>
+                }
+              </mat-form-field>
+        </div>
+        <div class="col-6 col-md-6">
+            <mat-form-field class="w-100">
+                <mat-label>Turno</mat-label>
+                <mat-select formControlName="turno">
+                  @for (shift of listShifts; track shift) {
+                    <mat-option [value]="shift">{{shift}}</mat-option>
+                  }
+                </mat-select>
+                @if (formEmployee.controls["turno"].invalid) {
+                    <mat-error>Selecione um <strong>turno</strong></mat-error>
+                }
+              </mat-form-field>
+        </div>
+
+        <div class="col-12 mt-5">
+            <button type="button" routerLink="/home" class="btn btn-outline-danger float-start">Cancelar</button>
+            <button type="button" [disabled]="!formEmployee.valid" (click)="seveForm()" class="btn btn-outline-success float-end">Incluir</button>
+        </div>
+    </form>
+</div>
