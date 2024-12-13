@@ -7,5 +7,6 @@ export const routes: Routes = [
     { path: "", component: IndexComponent },
     { path: "index", component: IndexComponent },
     { path: "home", component: HomeComponent },
-    { path: "employee/create", component: CreateUpdateEmployeeComponent, data: { title: 'Inserir Funcionário' }}
+    { path: "employee/create", component: CreateUpdateEmployeeComponent, data: { title: 'Inserir Funcionário' }},
+    { path: "employee/update/:id", component: CreateUpdateEmployeeComponent, data: { title: 'Editar Funcionário' }}
 ];

@@ -53,7 +53,7 @@
                             (click)="openModalViewEmployee(employee, '300ms', '300ms')">
                             <mat-icon>visibility</mat-icon>
                         </button>
-                        <button type="button" class="btn btn-sm btn-outline-warning btn-table">
+                        <button type="button" routerLink="/employee/update/{{ employee.id }}" class="btn btn-sm btn-outline-warning btn-table">
                             <mat-icon>edit</mat-icon>
                         </button>
                         <button type="button" class="btn btn-sm btn-outline-danger btn-table">

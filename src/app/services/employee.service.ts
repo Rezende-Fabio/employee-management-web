@@ -16,7 +16,15 @@ export class EmployeeService {
     return this.http.get<Employee[]>(`${this.apiUrl}/${endpoint}`);
   }
 
+  getEmployeeById(endpoint: string, idEmployee: number): Observable<Employee> {
+    return this.http.get<Employee>(`${this.apiUrl}/${endpoint}/${idEmployee}`);
+  }
+
   createEmployee(endpoint: string, employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(`${this.apiUrl}/${endpoint}`, employee);
+  }
+
+  updateEmployee(endpoint: string, employee: Employee, idEmployee: number): Observable<Employee> {
+    return this.http.patch<Employee>(`${this.apiUrl}/${endpoint}/${idEmployee}`, employee);
   }
 }
