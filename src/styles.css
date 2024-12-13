@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root{
+    --primary-color: #44006f;
+    --error-color: #ac2828;
+    --gray-color: #747474;
+}
+
+.c-primary{
+    color: var(--primary-color);
+}
+
+.c-error{
+    color: var(--error-color);
+}
+
+.c-gray{
+    color: var(--gray-color);
+}
+
+.hover:hover{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn {
+    transition: 0.3s linear all;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 3px #0a0a0a40;
+    transform: translateY(-3px);
+}
+
+.alert {
+    border-left: 8px solid !important;
+}
+
+.alert .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    border-radius: 0px 5px 5px 0px;
+    background-color: currentColor;
+    animation: progress 9.8s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        width: 0%;
+    }
+}
