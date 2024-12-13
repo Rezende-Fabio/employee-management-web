@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { EmployeeService } from '../../services/employee.service';
 import { Employee } from '../../models/employee/employee';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-create-update-employee',
@@ -39,6 +40,7 @@ export class CreateUpdateEmployeeComponent {
     private formBuilder: FormBuilder, 
     private route: ActivatedRoute, 
     private apiService: EmployeeService,
+    private alertService: AlertService,
     private router: Router,
   ) { }
 
@@ -53,6 +55,7 @@ export class CreateUpdateEmployeeComponent {
     const employee: Employee = this.formEmployee.getRawValue();
     this.apiService.createEmployee('v1/employees', employee).subscribe({
       next: (response: Employee) => {
+        this.alertService.showAlert(`O funcionário ${response.nomeCompleto} foi incluído com sucesso!`, 'success');
         this.router.navigate(["home"]);
       },  
       error: (error) => {
