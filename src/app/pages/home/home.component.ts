@@ -15,6 +15,7 @@ import { ModalViewEmployeeComponent } from './modal-view-employee/modal-view-emp
 import { AlertService } from '../../services/alert.service';
 import { Alert } from '../../interfaces/alert';
 import { CommonModule } from '@angular/common';
+import { ModalDeleteEmployeeComponent } from './modal-delete-employee/modal-delete-employee.component';
 
 @Component({
   selector: 'app-home',
@@ -129,5 +130,15 @@ export class HomeComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
     });
+  }
+
+  openModalDeleteEmployee(employee: Employee, enterAnimationDuration: string, exitAnimationDuration: string) {
+    this.dialog.open(ModalDeleteEmployeeComponent, {
+      height: "250px",
+      width: '900px',
+      data: employee,
+      enterAnimationDuration,
+      exitAnimationDuration,
+    }).afterClosed().subscribe(() => this.getAllEmployees());
   }
 } 

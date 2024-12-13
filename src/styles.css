@@ -36,6 +36,16 @@ a{
     text-decoration: none;
 }
 
+.btn {
+    transition: 0.3s linear all;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 3px #0a0a0a40;
+    transform: translateY(-3px);
+}
+
 .alert {
     border-left: 8px solid !important;
 }

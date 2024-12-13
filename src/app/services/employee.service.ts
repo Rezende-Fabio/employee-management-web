@@ -27,4 +27,8 @@ export class EmployeeService {
   updateEmployee(endpoint: string, employee: Employee, idEmployee: number): Observable<Employee> {
     return this.http.patch<Employee>(`${this.apiUrl}/${endpoint}/${idEmployee}`, employee);
   }
+
+  deleteEmployee(endpoint: string, idEmployee: number): Observable<Employee> {
+    return this.http.delete<Employee>(`${this.apiUrl}/${endpoint}/${idEmployee}`);
+  }
 }

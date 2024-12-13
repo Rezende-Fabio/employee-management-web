@@ -1,0 +1,43 @@
+.btn-close-modal {
+    border: 2px solid #575757;
+    border-radius: 8px;
+    padding: 5px 5px 0px 5px;
+    position: relative;
+    transition: 0.3s linear all;
+}
+
+.btn-close-modal:hover {
+    box-shadow: 0px 0px 5px 3px #0a0a0a40;
+    transform: translateY(-3px);
+}
+
+mat-icon {
+    transition: 0.3s linear all;
+}
+
+.title {
+    font-size: 25px;
+    color: var(--primary-color);
+}
+
+.message {
+    font-size: 18px;
+    margin-top: 35px;
+}
+
+.employee{
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.btn-close-modal:hover mat-icon {
+    transform: translateY(-1.5px);
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+}
