@@ -54,7 +54,7 @@ Certifique-se de que o projeto backend em C# esteja em execução e acessível. 
 
 ```typescript
 export const environment = {
-  apiUrl: 'http://localhost:5052'
+  urlApi: 'http://localhost:5052'
 };
 ```
 
